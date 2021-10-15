@@ -87,7 +87,7 @@ Additional waterfalls from different cubesats can be found in the waterfalls fol
 
 PDU packet from QMR-KWT:
 
-[QMR_KWT](link to photo)
+[QMR_KWT](https://github.com/VladStoyanoff/Space_Challenges_2021_Ground_Station/blob/master/Screenshots/QMR_KWT.png)
 
 The Ground Station in action:
 
