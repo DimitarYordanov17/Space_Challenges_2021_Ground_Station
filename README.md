@@ -22,7 +22,7 @@ To be able to process the signal one would need to download Miniconda (download 
 
 First, one would start with assembling the flow. This calls the GNU Radio (essentially, a python script) to initiate the flow.
 
-![flowgraph](link to gnuradio flowgraph)
+![flowgraph](https://github.com/VladStoyanoff/Space_Challenges_2021_Ground_Station/blob/master/Screenshots/flowgraph.png)
 
 QT GUI Range - All those blocks are variables fed to the flow
 Osmocom Source - your live RF receiver (the antenna)  
