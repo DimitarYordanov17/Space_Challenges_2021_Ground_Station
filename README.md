@@ -94,4 +94,7 @@ The Ground Station in action:
 https://user-images.githubusercontent.com/88051591/137527052-ba6f591f-a93a-42f8-9a56-8607a9372a54.mp4
 
 
+## Acknowledgements
 
+* The whole EnduroSat team for sponsoring this bootcamp
+* Daniel Estevez for creating some vital libraries used within the GNU radio flow
