@@ -12,25 +12,7 @@ Additionally I will also post here our results from the project altogether and o
 
 # Signal Processing
 
-To successfully process the signals, we run a GNU Radio flow that appreciates 3 main consecutive steps: Receive and Save, Demodulate and Deframe, Upload.
-
-The below steps will explore 2 ways of doing the aforementioned:
-
-**The first way is by saving the file received and deframing it later. **
-
-The pros of this is that we will have the data saved on a wav file and can use it for more considerate analysis.
-
-The cons is that in case we need the decoded data fast, this way will just not suffice. For that reason we explored a second way:  
-
-**The second way is bypassing the saving part and directly decoding the information live as the satellite passes.**  
-
-The pros here are that you get decoded data fast.  
-
-The cons are that you don't have a file with the raw data recorded and the only data you get out is the decoded one. This would pose problems in case you need to analyze the raw data.  
-
-We will explore each method in detail.  
-
-# Method 1
+To successfully process the signals, we run a GNU Radio flow that appreciates 3 main consecutive steps: Receive and Save, Demodulate and Deframe, Output.
 
 ## Prerequisites
 
@@ -47,29 +29,48 @@ Osmocom Source - your live RF receiver (the antenna)
 Complex to Float - converts the format of the information received so that it could be saved to a wav file and demodulated   
 QT GUI Sink - visualization of the data (not necessary, but very useful if one is testing with a graphical interface, rather than only on Raspberry Pi without a monitor. Also this is how the waterfalls you can see on the pictures lower are visualized)  
 Wav File Sink - Saves the raw data to a wav file, in case we want that for further analysis  
-FSK Demodulator - 
+FSK Demodulator - demodulates the data live
+AX.25 Deframer - Deframes the data by the AX.25 protocol live
+Message Debug - Used to print out the data as it's getting received
 
-Wav File Sink - Saves the file
+In the following paragraphs I will go in more detail on how each block corresponds with the rest of the flow
+
+## Receiving + Saving + Waterfall Visualizing
+
+![Receiving_Saving_Visualizing](link with the photo)
+
+The block responsible for receiving is Osmocom Source. The main thing we should keep in mind here are the following variables:  
+* Sample rate - Anything lower than 1k will hinder the signal and we will lose important data;  
+* Frequency - The frequency at which the cubesat transmits data. It should be set prior to the cubesat pass;  
+* Bandwidth - 10k is the optimal bandwidht for receiving telemtry data from QMR-KWT. This was corresponded directly with the CTO of EnduroSat;  
+* RF gain - We amplify the signal so that we can process it later on;  
+
+The block responsible for visualizing the waterfall is QT GUI Sink
+
+Not much to say here, except that the values should be identical with those on the Osmocom source to ensure data integrity. We have saved many waterfalls of different satellites which you can see in the waterfalls folder.  
+
+The block responsible for formatting the raw data from the cubesat is the Complex to Float block  
+
+The block responsible for saving the raw data is WAV File Sink  
+
+This block ensures that the raw data is saved in case we need it for further analysis  
 
 ## Demodulating + Deframing
 
-The wav file generated in the first graph is then fed to the second flow which demodulates and deframes the signal. 
+![Demodulate_Deframe](link with the photo)
 
+The block responsible for demodulating the data is the FSK demodulator.
 
+There are many different modulations, and the cubesat manufactures decides what the modulation of the signal will be. Modulation is the process of converting data into electrical signals and is useful for optimizing transmission.
 
+The block responsible for deframing the signal is AX.25 deframer.  
 
+Similar to the demodulation, the communication protocol is determined by the cubesat manufacturer. This protects the signal from being decoded by anyone. Communication protocols that are open-source are usually used for educational purposes.  
 
+## Output
 
-To receive data successfully with our Yagi-Antenna our team had to ensure several things:
+Finally we output the data into PDU packets.
 
-1. Proper design of the antenna  
-2. Proper tracking throughout the cubesat's pass  
-3. Proper flow diagrams within GNU Radio (our signal processing software)  
-
-I and Dimitar were responsible mainly for the third point mentioned so that is what I will go over in-depth in this repository. The rest can be found in the design document.
-
-The flow diagram used to capture the signal is the following:
-
-
+This happens directly in GNU Radio and some sample telemetry data can be seen in the folder decoded_data.
 
 
