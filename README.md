@@ -57,7 +57,7 @@ This block ensures that the raw data is saved in case we need it for further ana
 
 ## Demodulating + Deframing
 
-![Demodulate_Deframe](link with the photo)
+![Demodulate_Deframe](https://github.com/VladStoyanoff/Space_Challenges_2021_Ground_Station/blob/master/Screenshots/Demodulate_Deframe.png)
 
 The block responsible for demodulating the data is the FSK demodulator.
 
