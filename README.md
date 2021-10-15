@@ -42,7 +42,7 @@ In the following paragraphs I will go in more detail on how each block correspon
 The block responsible for receiving is Osmocom Source. The main thing we should keep in mind here are the following variables:  
 * Sample rate - Anything lower than 1k will hinder the signal and we will lose important data;  
 * Frequency - The frequency at which the cubesat transmits data. It should be set prior to the cubesat pass;  
-* Bandwidth - 10k is the optimal bandwidht for receiving telemtry data from QMR-KWT. This was corresponded directly with the CTO of EnduroSat;  
+* Bandwidth - 10k is the optimal bandwidth for receiving telemetry data from QMR-KWT. This was corresponded directly with the CTO of EnduroSat;  
 * RF gain - We amplify the signal so that we can process it later on;  
 
 The block responsible for visualizing the waterfall is QT GUI Sink
