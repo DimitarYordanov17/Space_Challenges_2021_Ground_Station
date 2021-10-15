@@ -37,7 +37,7 @@ In the following paragraphs I will go in more detail on how each block correspon
 
 ## Receiving + Saving + Waterfall Visualizing
 
-![Receiving_Saving_Visualizing](link with the photo)
+![Receiving_Saving_Visualizing](https://github.com/VladStoyanoff/Space_Challenges_2021_Ground_Station/blob/master/Screenshots/Receiving_Saving_Visualizing.png)
 
 The block responsible for receiving is Osmocom Source. The main thing we should keep in mind here are the following variables:  
 * Sample rate - Anything lower than 1k will hinder the signal and we will lose important data;  
