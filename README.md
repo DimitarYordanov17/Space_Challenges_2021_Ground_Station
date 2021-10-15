@@ -69,6 +69,8 @@ Similar to the demodulation, the communication protocol is determined by the cub
 
 ## Output
 
+![PDU_Packet_Output](https://github.com/VladStoyanoff/Space_Challenges_2021_Ground_Station/blob/master/Screenshots/PDU_Packet_Output.png)
+
 Finally we output the data into PDU packets.
 
 This happens directly in GNU Radio and some sample telemetry data can be seen in the folder decoded_data.
