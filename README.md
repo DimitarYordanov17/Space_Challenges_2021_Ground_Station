@@ -81,7 +81,7 @@ This happens directly in GNU Radio and some sample telemetry data can be seen in
 
 Waterfall from QMR-KWT:
 
-[QMR_KWT_waterfall](link to photo)
+[QMR_KWT_waterfall](https://github.com/VladStoyanoff/Space_Challenges_2021_Ground_Station/blob/master/waterfalls/QMR_KWT_waterfall.png)
 
 Additional waterfalls from different cubesats can be found in the waterfalls folder
 
