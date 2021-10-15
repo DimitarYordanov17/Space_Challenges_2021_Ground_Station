@@ -75,4 +75,22 @@ Finally we output the data into PDU packets.
 
 This happens directly in GNU Radio and some sample telemetry data can be seen in the folder decoded_data.
 
+## Results
+
+[Our presentation can be found here](https://docs.google.com/presentation/d/16nQSsULeZnAyRO5knKby9Yxyl1VgrfHguLCeWdUZ5Wo/edit#slide=id.geee1d22ef7_0_153)  
+
+Waterfall from QMR-KWT:
+
+[QMR_KWT_waterfall](link to photo)
+
+Additional waterfalls from different cubesats can be found in the waterfalls folder
+
+PDU packet from QMR-KWT:
+
+[QMR_KWT](link to photo)
+
+The Ground Station in action:
+
+
+
 
